@@ -1,10 +1,10 @@
-cat > index.html << 'EOF'
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CraftRanked - Nigeria's Premier Artisan Marketplace</title>
+    <title>CraftRanked - Nigeria's Trusted Artisan Marketplace</title>
+    <meta name="description" content="Find verified service providers in Lagos. Browse profiles, chat securely, and book with confidence. Escrow-protected payments.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,19 +14,18 @@ cat > index.html << 'EOF'
             <div class="nav-links">
                 <a href="#features">Features</a>
                 <a href="#how-it-works">How It Works</a>
-                <a href="#contact">Contact</a>
-                <a href="#" class="cta-button">Coming Soon</a>
+                <a href="#contact">Get Notified</a>
             </div>
         </nav>
     </header>
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Find Verified Artisans in Lagos</h1>
-            <p>Connect with trusted service providers for all your needs. Secure payments. Verified professionals.</p>
+            <h1>Nigeria's Trusted Artisan Marketplace</h1>
+            <p>Browse verified service providers in Lagos. Chat before you book. Pay securely with escrow protection.</p>
             <div class="hero-buttons">
-                <button class="btn-primary">Launching Soon</button>
-                <button class="btn-secondary">Learn More</button>
+                <a href="#contact" class="btn-primary">Get Notified at Launch</a>
+                <a href="#how-it-works" class="btn-secondary">Learn More</a>
             </div>
         </div>
     </section>
@@ -36,18 +35,33 @@ cat > index.html << 'EOF'
         <div class="feature-grid">
             <div class="feature-card">
                 <div class="icon">✓</div>
-                <h3>Verified Artisans</h3>
-                <p>All service providers verified with NIN and face recognition</p>
+                <h3>NIN Verified Artisans</h3>
+                <p>Every service provider verified with National ID and face recognition for your safety</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">💬</div>
+                <h3>Chat Before Booking</h3>
+                <p>Message artisans directly through our secure platform before making any commitment</p>
             </div>
             <div class="feature-card">
                 <div class="icon">💰</div>
-                <h3>Secure Payments</h3>
-                <p>Escrow system ensures payment only after job completion</p>
+                <h3>Escrow Protection</h3>
+                <p>Payment held securely until job completion. Only 15% platform fee.</p>
             </div>
             <div class="feature-card">
                 <div class="icon">⭐</div>
-                <h3>Trusted Reviews</h3>
-                <p>Real reviews from verified customers</p>
+                <h3>Real Reviews</h3>
+                <p>Authentic ratings from verified customers who actually used the service</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📱</div>
+                <h3>Easy to Use</h3>
+                <p>Simple browsing, instant messaging, and quick booking - all in one platform</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🔒</div>
+                <h3>Secure Platform</h3>
+                <p>Your data is protected. Payments processed through trusted Nigerian payment gateways</p>
             </div>
         </div>
     </section>
@@ -57,49 +71,103 @@ cat > index.html << 'EOF'
         <div class="steps">
             <div class="step">
                 <div class="step-number">1</div>
-                <h3>Post Your Need</h3>
-                <p>Describe the service you need</p>
+                <h3>Browse Services</h3>
+                <p>Find plumbers, electricians, cleaners, tailors & more in Lagos</p>
             </div>
             <div class="step">
                 <div class="step-number">2</div>
-                <h3>Get Bids</h3>
-                <p>Verified artisans send you quotes</p>
+                <h3>View Profiles</h3>
+                <p>Check portfolios, reviews, ratings & NIN verification status</p>
             </div>
             <div class="step">
                 <div class="step-number">3</div>
-                <h3>Choose & Pay</h3>
-                <p>Select your artisan and pay securely</p>
+                <h3>Message & Book</h3>
+                <p>Chat with artisans to discuss your needs, then book directly</p>
             </div>
             <div class="step">
                 <div class="step-number">4</div>
-                <h3>Job Done</h3>
-                <p>Artisan gets paid after completion</p>
+                <h3>Secure Payment</h3>
+                <p>Pay through escrow - funds released only after job completion</p>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
         <h2>Get Notified When We Launch</h2>
-        <p>Be the first to know when CraftRanked goes live</p>
-        <div class="email-signup">
-            <input type="email" placeholder="Enter your email" id="email">
-            <button onclick="notify()">Notify Me</button>
-        </div>
+        <p>Be among the first to access verified artisans in Lagos</p>
+        <form class="email-signup" id="waitlistForm">
+            <input type="email" placeholder="Enter your email" id="email" required>
+            <button type="submit">Notify Me</button>
+        </form>
+        <div id="message" class="message"></div>
     </section>
 
     <footer>
-        <p>&copy; 2025 CraftRanked. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>CraftRanked</h3>
+                <p>Connecting Nigerians with verified service providers</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: info@craftranked.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 CraftRanked. All rights reserved.</p>
+        </div>
     </footer>
 
     <script>
-        function notify() {
+        document.getElementById('waitlistForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
             const email = document.getElementById('email').value;
-            if (email) {
-                alert('Thank you! We\'ll contact you at ' + email + ' when we launch!');
-                document.getElementById('email').value = '';
+            const messageDiv = document.getElementById('message');
+            const button = e.target.querySelector('button');
+            
+            // Disable button
+            button.disabled = true;
+            button.textContent = 'Submitting...';
+            
+            try {
+                const response = await fetch('https://craftrankedbackend-production.up.railway.app/api/v1/waitlist', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    messageDiv.textContent = '✅ Thank you! We\'ll notify you when we launch.';
+                    messageDiv.className = 'message success';
+                    document.getElementById('email').value = '';
+                } else {
+                    messageDiv.textContent = '❌ ' + (data.error || 'Something went wrong. Please try again.');
+                    messageDiv.className = 'message error';
+                }
+            } catch (error) {
+                messageDiv.textContent = '❌ Connection error. Please try again later.';
+                messageDiv.className = 'message error';
+            } finally {
+                button.disabled = false;
+                button.textContent = 'Notify Me';
             }
-        }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
     </script>
 </body>
 </html>
-EOF
