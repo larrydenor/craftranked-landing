@@ -1,16 +1,17 @@
-/* CraftRanked Brand Colors */
+/* CraftRanked Brand Colors - Dark Metallic Green */
 :root {
-    --primary-dark: #1a1a2e;
-    --primary-purple: #6C63FF;
-    --primary-blue: #4834DF;
-    --accent-green: #00D26A;
-    --accent-green-hover: #00B359;
-    --text-dark: #2d3436;
-    --text-light: #636e72;
-    --bg-light: #f8f9fa;
+    --primary-dark: #111827;
+    --primary-green: #1B5E37;
+    --primary-green-hover: #14472A;
+    --primary-green-light: #2D7A4F;
+    --accent-beige: #E8D6C1;
+    --accent-ivory: #FFF8F0;
+    --text-dark: #111827;
+    --text-light: #6B7280;
+    --bg-light: #F9FAFB;
     --white: #ffffff;
-    --error: #ff6b6b;
-    --success: #00D26A;
+    --error: #EF4444;
+    --success: #34D399;
 }
 
 * {
@@ -66,12 +67,12 @@ nav {
 }
 
 .nav-links a:hover {
-    color: var(--accent-green);
+    color: var(--primary-green-light);
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-blue) 100%);
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-hover) 100%);
     color: white;
     padding: 150px 2rem 100px;
     text-align: center;
@@ -132,24 +133,27 @@ nav {
 }
 
 .btn-primary {
-    background: var(--accent-green);
+    background: var(--primary-green);
     color: white;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    background: var(--accent-green-hover);
-    box-shadow: 0 10px 20px rgba(0, 210, 106, 0.3);
+    background: var(--primary-green-hover);
+    box-shadow: 0 10px 20px rgba(27, 94, 55, 0.4);
 }
 
 .btn-secondary {
     background: white;
-    color: var(--primary-purple);
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
 }
 
 .btn-secondary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+    background: var(--primary-green);
+    color: white;
+    box-shadow: 0 10px 20px rgba(27, 94, 55, 0.3);
 }
 
 /* Features Section */
@@ -185,8 +189,8 @@ nav {
 
 .feature-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(108, 99, 255, 0.15);
-    border-color: var(--primary-purple);
+    box-shadow: 0 10px 30px rgba(27, 94, 55, 0.15);
+    border-color: var(--primary-green);
 }
 
 .icon {
@@ -234,7 +238,7 @@ nav {
 .step-number {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+    background: linear-gradient(135deg, var(--primary-green), var(--primary-green-hover));
     color: white;
     border-radius: 50%;
     display: flex;
@@ -243,7 +247,7 @@ nav {
     font-size: 1.8rem;
     font-weight: bold;
     margin: 0 auto 1.5rem;
-    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+    box-shadow: 0 5px 15px rgba(27, 94, 55, 0.3);
 }
 
 .step h3 {
@@ -260,7 +264,7 @@ nav {
 /* Contact Section */
 .contact {
     padding: 80px 2rem;
-    background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-blue) 100%);
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-hover) 100%);
     color: white;
     text-align: center;
 }
@@ -294,8 +298,8 @@ nav {
 
 .email-signup button {
     padding: 1rem 2rem;
-    background: var(--accent-green);
-    color: white;
+    background: var(--accent-ivory);
+    color: var(--primary-green);
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -306,9 +310,9 @@ nav {
 }
 
 .email-signup button:hover:not(:disabled) {
-    background: var(--accent-green-hover);
+    background: white;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 210, 106, 0.4);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4);
 }
 
 .email-signup button:disabled {
@@ -324,9 +328,9 @@ nav {
 }
 
 .message.success {
-    background: rgba(0, 210, 106, 0.2);
+    background: rgba(52, 211, 153, 0.2);
     color: white;
-    border: 2px solid var(--accent-green);
+    border: 2px solid var(--success);
 }
 
 .message.error {
@@ -352,7 +356,7 @@ footer {
 
 .footer-section h3 {
     margin-bottom: 1rem;
-    color: var(--accent-green);
+    color: var(--primary-green-light);
 }
 
 .footer-section p {
