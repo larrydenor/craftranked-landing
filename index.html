@@ -1,0 +1,105 @@
+cat > index.html << 'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CraftRanked - Nigeria's Premier Artisan Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CraftRanked</div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#contact">Contact</a>
+                <a href="#" class="cta-button">Coming Soon</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Find Verified Artisans in Lagos</h1>
+            <p>Connect with trusted service providers for all your needs. Secure payments. Verified professionals.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary">Launching Soon</button>
+                <button class="btn-secondary">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <h2>Why Choose CraftRanked?</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="icon">✓</div>
+                <h3>Verified Artisans</h3>
+                <p>All service providers verified with NIN and face recognition</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">💰</div>
+                <h3>Secure Payments</h3>
+                <p>Escrow system ensures payment only after job completion</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">⭐</div>
+                <h3>Trusted Reviews</h3>
+                <p>Real reviews from verified customers</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Post Your Need</h3>
+                <p>Describe the service you need</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Get Bids</h3>
+                <p>Verified artisans send you quotes</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Choose & Pay</h3>
+                <p>Select your artisan and pay securely</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Job Done</h3>
+                <p>Artisan gets paid after completion</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Get Notified When We Launch</h2>
+        <p>Be the first to know when CraftRanked goes live</p>
+        <div class="email-signup">
+            <input type="email" placeholder="Enter your email" id="email">
+            <button onclick="notify()">Notify Me</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 CraftRanked. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function notify() {
+            const email = document.getElementById('email').value;
+            if (email) {
+                alert('Thanks! We\'ll notify you at ' + email);
+                document.getElementById('email').value = '';
+            }
+        }
+    </script>
+</body>
+</html>
+EOF
