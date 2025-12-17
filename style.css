@@ -295,9 +295,13 @@ nav {
 }
 
 .referral-emoji {
-    font-size: 4rem;
+    font-size: 5rem;
     margin-bottom: 1rem;
     animation: pulse 2s infinite;
+    font-weight: 700;
+    color: var(--accent-beige);
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    line-height: 1;
 }
 
 @keyframes pulse {
@@ -627,6 +631,23 @@ footer {
 
     .tiers-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .tier-card {
+        padding: 1rem;
+    }
+
+    .tier-name {
+        font-size: 1.1rem;
+    }
+
+    .tier-commission {
+        font-size: 1.5rem;
+    }
+
+    .referral-tiers {
+        padding: 1.5rem;
     }
 
     .btn-referral {
@@ -660,5 +681,61 @@ footer {
     .nav-links a {
         font-size: 0.8rem;
         padding: 0.25rem 0.5rem;
+    }
+
+    .referral-emoji {
+        font-size: 3rem;
+    }
+
+    .referral h2 {
+        font-size: 1.5rem;
+    }
+
+    .referral-subtitle {
+        font-size: 1rem;
+    }
+
+    .referral-earnings {
+        font-size: 0.9rem;
+    }
+
+    .tiers-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .tier-card {
+        padding: 1.2rem;
+    }
+
+    .tier-name {
+        font-size: 1.2rem;
+    }
+
+    .tier-requirement {
+        font-size: 0.85rem;
+    }
+
+    .tier-commission {
+        font-size: 1.8rem;
+    }
+
+    .referral-tiers {
+        padding: 1.5rem 1rem;
+    }
+
+    .referral-tiers h3 {
+        font-size: 1.5rem;
+    }
+
+    .tiers-note {
+        font-size: 0.85rem;
+    }
+
+    .btn-referral {
+        font-size: 1rem;
+        padding: 0.9rem 1.5rem;
+        width: 100%;
+        max-width: 280px;
     }
 }
